@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { LaunchScreenRef, Screen } from "./LaunchScreen";
 import { ProjectsType } from "@/utils/models";
+import Image from "next/image";
 
 type Props = {
   projects: ProjectsType[];

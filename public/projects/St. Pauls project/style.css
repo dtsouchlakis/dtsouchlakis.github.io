@@ -207,7 +207,7 @@ section {
 }
 
 #section5 {
-    background-image: url(./assets/seoul-skyline-south-korea-vector-linear-art-illustration-represents-city-its-most-notable-buildings-fully-152238589-transformed.jpeg);
+    background-image: url(./assets/seoul_skyline.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -907,6 +907,7 @@ footer img {
 #fakenavbar1 {
     display: none;
 }
+
 .menu-icon {
     cursor: pointer;
     float: right;
@@ -969,9 +970,11 @@ footer img {
 .visually-hidden {
     display: none;
 }
-.hiddentext li h3{
+
+.hiddentext li h3 {
     text-align: center;
 }
+
 @media screen and (max-width:960px) {
     body {
         font-size: 12px;
@@ -1179,7 +1182,7 @@ footer img {
         height: 100%;
     }
 
- 
+
     .hiddentext ul:not(.genderli) {
         align-items: baseline;
     }
@@ -1187,9 +1190,11 @@ footer img {
     .genderli {
         left: 0px;
     }
+
     .genderli li {
         text-align: center;
     }
+
     .earth {
         margin-right: 11%;
         margin-left: 11%;
@@ -1209,15 +1214,19 @@ footer img {
         display: flex;
         align-items: center;
     }
+
     footer div {
         flex-direction: row;
     }
+
     .accrimg {
         display: none;
     }
+
     .menu-icon {
         display: unset;
     }
+
     .accreditations {
         display: block;
         background-color: #3454D1;
@@ -1225,19 +1234,22 @@ footer img {
         padding: 15px;
         border-radius: 8px;
     }
+
     .columnhead {
         width: auto;
         align-items: normal;
 
     }
-    .hiddentext .firstOfList h3{
+
+    .hiddentext .firstOfList h3 {
         text-align: start;
     }
 
-    #section3 div figure:not(:nth-child(1)){
+    #section3 div figure:not(:nth-child(1)) {
         display: none;
     }
-    #section3 div figure{
+
+    #section3 div figure {
         background-color: transparent;
     }
 
@@ -1247,48 +1259,63 @@ footer img {
     .top li {
         padding: 6px;
     }
-    .maleimg, .femaleimg, .earth, .svg-item {
+
+    .maleimg,
+    .femaleimg,
+    .earth,
+    .svg-item {
         display: none;
     }
+
     h1 {
         font-size: 1.5rem;
     }
+
     #section3 div:not(.morebutton) {
         margin-bottom: 15%;
     }
+
     .content {
         font-size: 1rem;
     }
+
     footer div {
         font-size: 0.5rem;
     }
+
     .top ul {
         padding: 0;
         justify-content: center;
 
     }
+
     .socials ul {
         flex-direction: column;
     }
+
     .bottom {
         align-items: center;
     }
+
     .socials {
         bottom: auto;
     }
+
     .content a,
     .content a:visited {
         font-size: 1.1rem;
     }
+
     .hiddentext ul:not(.genderli) {
 
         align-items: center;
     }
 
-    #section3 div figure:not(:nth-child(1)){
+    #section3 div figure:not(:nth-child(1)) {
         display: none;
     }
-    #section3 div figure{
+
+    #section3 div figure {
         background-color: transparent;
     }
 
@@ -1299,58 +1326,73 @@ footer img {
     html {
         font-size: 12px
     }
+
     .morebutton {
         max-width: 100px;
     }
+
     .top li {
         padding: 4px;
     }
+
     .top ul {
         margin: 0;
         padding: 0;
     }
+
     .genderli {
         justify-content: space-around;
     }
+
     .genderli li {
         text-align: center;
     }
+
     .statsimg ul {
         left: 0;
     }
 }
+
 @media screen and (max-width:391px) {
     html {
         font-size: 10px;
     }
+
     .socials {
         display: none;
     }
+
     .top .buttons ul {
         display: flex;
         flex-direction: column;
 
     }
+
     #section1 .top {
         justify-content: start;
         align-items: center;
         height: 100vh;
     }
+
     .top .buttons ul li {
         border-radius: 3px;
         background-color: rgba(144, 141, 194, 0.4);
         margin: 3px;
     }
+
     #section1 {
         height: 100vh;
     }
+
     #section3 div:not(.morebutton) {
         margin-bottom: 2%;
     }
+
     .morebutton {
         max-width: 100px;
         height: 20px;
     }
+
     .sectionbackground {
         background-size: cover;
         background-position: center;

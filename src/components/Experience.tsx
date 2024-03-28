@@ -9,7 +9,7 @@ export default function Experience({
   return (
     <ol className="relative border-s border-gray-700 sm:w-auto w-[70%]">
       {experienceHistory.map((experience) => (
-        <li className="mb-7 ms-6">
+        <li className="mb-7 ms-6" key={experience.company}>
           <span
             key={experience.company}
             className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-gray-900 "
