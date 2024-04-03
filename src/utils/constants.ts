@@ -1,5 +1,6 @@
 import { ExperienceType, EducationType, ProjectsType } from "../utils/models";
 import { ImportTypesEnum } from "../utils/models";
+import EasterEgg from "@/components/EasterEgg";
 
 export const SKILLS = [
   "Python",
@@ -174,5 +175,15 @@ export const PROJECTS = [
     technologies: ["css", "html"],
     importType: ImportTypesEnum.IMPORT,
     repo: "https://github.com/dtsouchlakis/dtsouchlakis.github.io",
+  },
+  {
+    name: "Portfolio",
+    src: "/EasterEgg",
+    brief: `My personal portfolio.`,
+    description: `The website you are currently on.`,
+    image: "/assets/portfolio-screen.png",
+    technologies: ["react", "tailwind", "typescript", "nextjs"],
+    importType: ImportTypesEnum.COMPONENT,
+    repo: "https://github.com/dtsouchlakis.github.io",
   },
 ] as ProjectsType[];

@@ -10,7 +10,7 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home(props: { className?: string }) {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
@@ -31,6 +31,12 @@ export default function Home() {
     const subject = target.subject.value;
     const body = target.body.value;
     const email = target.email.value;
+    const honeypot = target.honeypot.value;
+
+    if (honeypot) {
+      return;
+    }
+
     window.open(
       `mailto:d.tsouchlakis@outlook.com?subject=${subject}&body=${body}&email=${email}`
     );
@@ -61,7 +67,7 @@ export default function Home() {
       </Head>
 
       <main
-        className={` ${inter.className} h-screen bg-[url('/background.jpg')] bg-cover `}
+        className={` ${inter.className} h-screen bg-[url('/background.jpg')] bg-cover ${props.className}`}
       >
         <Header
           homeRef={homeRef}
@@ -179,7 +185,7 @@ export default function Home() {
                 Email:{" "}
                 <a
                   href="mailto:d.tsouchlakis@outlook.com"
-                  className="text-slate-200 hover:text-slate-800"
+                  className="text-slate-200 hover:text-slate-200 cursor-pointer hover:underline "
                 >
                   d.tsouchlakis@outlook.com
                 </a>
@@ -188,7 +194,7 @@ export default function Home() {
                 Phone:{" "}
                 <a
                   href="tel:+821025773205"
-                  className="text-slate-200 hover:text-slate-800"
+                  className="text-slate-200 hover:text-slate-200 cursor-pointer hover:underline "
                 >
                   +821025773205
                 </a>
@@ -259,6 +265,12 @@ export default function Home() {
                   className="w-full border-2 border-slate-800 rounded-lg p-2 my-4 text-slate-800"
                   rows={5}
                 ></textarea>
+                <input
+                  type="text"
+                  name="honeypot"
+                  placeholder="Name"
+                  className="bg-slate-200 text-slate-800 px-4 py-2 rounded-full hover:bg-slate-800 hover:text-slate-200 transition duration-300 ease-in-out w-24 hidden"
+                />
                 <button
                   type="submit"
                   className="bg-slate-200 text-slate-800 px-4 py-2 rounded-full hover:bg-slate-800 hover:text-slate-200 transition duration-300 ease-in-out w-24"

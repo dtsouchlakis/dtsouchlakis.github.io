@@ -1,8 +1,15 @@
 import path from "path";
-import { forwardRef, useImperativeHandle, useMemo, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useState,
+} from "react";
 import NoPreview from "./NoPreview";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { ProjectsType, ImportTypesEnum } from "@/utils/models";
+import { isMobile } from "@/utils/utils";
 
 export type LaunchScreenRef = {
   openPopup: (project: ProjectsType) => void;
@@ -16,19 +23,20 @@ const LaunchScreen = (props: Props, ref: any) => {
   const [activeProject, setActiveProject] = useState<ProjectsType | null>();
   const [showPopup, togglePopup] = useState(false);
   const [isPreviewVisible, setPreviewVisible] = useState(false);
+  const [importedComponent, setImportedComponent] =
+    useState<JSX.Element | null>(null);
 
   const pathBase = "/projects";
-  const isMobile = () => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-    return window.innerWidth < 768;
-  };
 
   const src = useMemo(() => {
     console.log(activeProject);
     if ((isMobile() && activeProject) || (activeProject && isPreviewVisible)) {
-      return <NoPreview project={activeProject} />;
+      return (
+        <NoPreview
+          project={activeProject}
+          isPreviewVisible={isPreviewVisible}
+        />
+      );
     }
     switch (activeProject?.importType) {
       case ImportTypesEnum.IMPORT:
@@ -52,10 +60,24 @@ const LaunchScreen = (props: Props, ref: any) => {
         );
       case ImportTypesEnum.LINK:
         return <NoPreview project={activeProject} />;
+      case ImportTypesEnum.COMPONENT:
+        isPreviewVisible;
+        return importedComponent;
+
       default:
         break;
     }
   }, [activeProject, isPreviewVisible]);
+
+  useEffect(() => {
+    const importComponent = async () => {
+      const newComp = await import("./EasterEgg");
+      const AnotherComponent = newComp.default;
+      setImportedComponent(<AnotherComponent />);
+    };
+
+    importComponent();
+  }, []);
 
   const handleClose = () => {
     togglePopup(false);

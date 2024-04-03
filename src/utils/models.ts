@@ -21,6 +21,7 @@ export enum ImportTypesEnum {
   LINK = "link", //external repo hosting the code (no preeview)
   IMPORT = "import", //actual html code to preview in iframe,
   PREVIEW = "preview", //external url where the code is hosted
+  COMPONENT = "component",
 }
 
 export interface ProjectsType {

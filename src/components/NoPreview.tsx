@@ -2,8 +2,15 @@ import { ProjectsType } from "@/utils/models";
 import Triangle from "../assets/triangle.svg";
 import Circle from "../assets/circle.svg";
 import Square from "../assets/square.svg";
+import { isMobile } from "@/utils/utils";
 
-export default function NoPreview({ project }: { project?: ProjectsType }) {
+export default function NoPreview({
+  project,
+  isPreviewVisible,
+}: {
+  project?: ProjectsType;
+  isPreviewVisible?: boolean;
+}) {
   return (
     <div
       className="flex sm:h-[80vh] sm:w-[90vw] h-[80vh] w-[90vw]  flex-col justify-center mx-auto text-center p-4 text-slate-300 bg-slate-800 rounded border-2 border-slate-500 overflow-hidden"
@@ -19,10 +26,12 @@ export default function NoPreview({ project }: { project?: ProjectsType }) {
       </a>
 
       <h1 className="sm:text-xl font-semibold text-md ">
-        This project has no preview - But you can view the code on{" "}
+        {!isMobile() && !isPreviewVisible
+          ? "This project has no preview - But you can view the code on"
+          : "You can view this project's code on"}{" "}
         <a
           className="underline hover:text-slate-100 cursor-pointer"
-          href={project?.src}
+          href={project?.repo}
           target="_blank"
         >
           github!
